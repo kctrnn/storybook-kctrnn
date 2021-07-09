@@ -28,3 +28,11 @@ html {
 *::before {
   box-sizing: inherit;
 }
+
+.app {
+  padding: 100px;
+}
+
+.app > * {
+  margin: 10px;
+}

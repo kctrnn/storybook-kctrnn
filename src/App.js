@@ -2,12 +2,24 @@ import Button from "./components/Button";
 
 function App() {
   return (
-    <div className='app' style={{ padding: "100px" }}>
-      <Button label='Default' size='small' variant='text' />
+    <div className='app'>
+      <Button variant='text'>Default</Button>
 
-      <Button label='Primary' color='primary' />
+      <Button variant='text' color='primary'>
+        Primary
+      </Button>
 
-      <Button label='Secondary' size='large' color='secondary' />
+      <Button variant='text' color='secondary'>
+        Secondary
+      </Button>
+
+      <Button variant='text' color='danger'>
+        Danger
+      </Button>
+
+      <Button variant='text' disabled>
+        Disabled
+      </Button>
     </div>
   );
 }

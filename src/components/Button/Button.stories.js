@@ -6,68 +6,135 @@ export default {
   title: "kctrnn/Button",
   component: Button,
 
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-
-  args: {
-    disabled: false,
-    disableShadow: false,
-    size: "medium",
-    color: "default",
-  },
+  argTypes: {},
 };
 
-const Template = (args) => <Button {...args} />;
+export const Fill = () => (
+  <div style={{ padding: "50px" }}>
+    <Button variant='fill'>Default</Button>
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "Default",
-};
+    <Button variant='fill' color='primary'>
+      Primary
+    </Button>
 
-export const Primary = Template.bind({});
-Primary.args = {
-  label: "Primary",
-  color: "primary",
-};
+    <Button variant='fill' color='secondary'>
+      Secondary
+    </Button>
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: "Secondary",
+    <Button variant='fill' color='danger'>
+      Danger
+    </Button>
+
+    <Button variant='fill' disabled>
+      Disabled
+    </Button>
+  </div>
+);
+
+export const Outline = () => (
+  <div style={{ padding: "50px" }}>
+    <Button variant='outline'>Default</Button>
+
+    <Button variant='outline' color='primary'>
+      Primary
+    </Button>
+
+    <Button variant='outline' color='secondary'>
+      Secondary
+    </Button>
+
+    <Button variant='outline' color='danger'>
+      Danger
+    </Button>
+
+    <Button variant='outline' disabled>
+      Disabled
+    </Button>
+  </div>
+);
+
+export const Text = () => (
+  <div style={{ padding: "50px" }}>
+    <Button variant='text'>Default</Button>
+
+    <Button variant='text' color='primary'>
+      Primary
+    </Button>
+
+    <Button variant='text' color='secondary'>
+      Secondary
+    </Button>
+
+    <Button variant='text' color='danger'>
+      Danger
+    </Button>
+
+    <Button variant='text' disabled>
+      Disabled
+    </Button>
+  </div>
+);
+
+export const Size = () => (
+  <div style={{ padding: "50px" }}>
+    <div>
+      <Button variant='fill' color='primary' size='sm'>
+        Small
+      </Button>
+
+      <Button variant='fill' color='primary'>
+        Medium
+      </Button>
+
+      <Button variant='fill' color='primary' size='lg'>
+        Large
+      </Button>
+    </div>
+
+    <div>
+      <Button variant='outline' color='danger' size='sm'>
+        Small
+      </Button>
+
+      <Button variant='outline' color='danger'>
+        Medium
+      </Button>
+
+      <Button variant='outline' color='danger' size='lg'>
+        Large
+      </Button>
+    </div>
+
+    <div>
+      <Button variant='text' size='sm'>
+        Small
+      </Button>
+
+      <Button variant='text'>Medium</Button>
+
+      <Button variant='text' size='lg'>
+        Large
+      </Button>
+    </div>
+  </div>
+);
+
+export const disableShadow = () => (
+  <div style={{ padding: "50px" }}>
+    <Button color='primary' variant='fill' disableShadow>
+      Disable Shadow
+    </Button>
+  </div>
+);
+
+const Template = (args) => <Button {...args}>{args.children}</Button>;
+export const Custom = Template.bind({});
+Custom.args = {
+  variant: "fill",
   color: "secondary",
-};
+  size: "md",
+  disableShadow: false,
+  disabled: false,
 
-export const Danger = Template.bind({});
-Danger.args = {
-  label: "Danger",
-  color: "danger",
-};
-
-export const Outline = Template.bind({});
-Outline.args = {
-  label: "Outline",
-  variant: "outline",
-};
-
-export const Text = Template.bind({});
-Text.args = {
-  label: "Text",
-  variant: "text",
-};
-
-export const Medium = Template.bind({});
-Medium.args = {
-  label: "Medium",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  label: "Small",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
-  label: "Large",
+  children: "Custom",
 };

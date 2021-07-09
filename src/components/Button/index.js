@@ -3,20 +3,24 @@ import PropTypes from "prop-types";
 import React from "react";
 import styles from "./Button.module.scss";
 
+// variant: text(default) - fill - outline
+// color: primary - secondary - danger
+// size: sm - md(default) - lg
+
 const Button = ({
-  label,
+  children,
   color,
-  backgroundColor,
   size,
   variant,
   disableShadow,
   ...props
 }) => {
+  // btn btn-fill btn-fill-primary btn-fill-sm
   const buttonClassName = classNames(
     styles.btn,
-    styles[`btn-${color}`],
-    styles[`btn-${size}`],
     styles[`btn-${variant}`],
+    styles[`btn-${variant}-${color}`],
+    styles[`btn-${variant}-${size}`],
 
     {
       [styles["btn-disableShadow"]]: disableShadow,
@@ -24,31 +28,26 @@ const Button = ({
   );
 
   return (
-    <button
-      type='button'
-      className={buttonClassName}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
+    <button type='button' className={buttonClassName} {...props}>
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 
-  color: PropTypes.oneOf(["default", "primary", "secondary", "danger"]),
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  backgroundColor: PropTypes.string,
-  variant: PropTypes.oneOf(["text", "outline"]),
+  color: PropTypes.oneOf(["primary", "secondary", "danger"]),
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
+  variant: PropTypes.oneOf(["text", "outline", "fill"]),
+  disableShadow: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  color: "default",
-  size: "medium",
-  backgroundColor: null,
-  variant: null,
+  color: null,
+  size: "md",
+  variant: "text",
+  disableShadow: false,
 };
 
 export default Button;

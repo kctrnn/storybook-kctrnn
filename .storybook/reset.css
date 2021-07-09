@@ -14,3 +14,7 @@ html {
 *::before {
   box-sizing: inherit;
 }
+
+div > button {
+  margin: 12px;
+}
