@@ -31,8 +31,8 @@ function App() {
       <Input helperText='Some interesting text' />
       <Input helperText='Some interesting text' error />
 
-      <Input startIcon />
-      <Input endIcon />
+      {/* <Input startIcon />
+      <Input endIcon /> */}
 
       <Input value='text' />
 

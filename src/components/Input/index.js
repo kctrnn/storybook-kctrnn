@@ -44,6 +44,7 @@ const InputStyled = styled.input`
 
 const FormGroup = styled.div`
   margin-bottom: 16px;
+  font-family: 'Noto Sans JP', sans-serif;
 `;
 
 const LabelStyled = styled.label`
@@ -88,8 +89,9 @@ Input.propTypes = {
   helperText: PropTypes.string,
   multiline: PropTypes.bool,
   row: PropTypes.string,
-  startIcon: PropTypes.bool,
-  endIcon: PropTypes.bool,
+  // startIcon: PropTypes.bool,
+  // endIcon: PropTypes.bool,
+  value: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -100,8 +102,9 @@ Input.defaultProps = {
   helperText: '',
   multiline: false,
   row: '',
-  startIcon: false,
-  endIcon: false,
+  value: '',
+  // startIcon: false,
+  // endIcon: false,
 };
 
 export default Input;
