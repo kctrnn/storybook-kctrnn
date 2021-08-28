@@ -26,11 +26,23 @@ Usage:
 
 ![screenshot](https://user-images.githubusercontent.com/70143270/125038720-f17fec00-e0bf-11eb-91a8-5ef04b766d08.png)
 
+### Input
+- `value`
+- `fullWidth` 
+- `size` sm / md
+- `error`
+- `disabled`
+- `multiline` with `row`
+- `helperText` 'Some interesting text'
+
+![screenshot1](https://user-images.githubusercontent.com/70143270/131225776-dcd4004a-13b5-4038-a1bd-f67eed14806e.png)
+
 ## 🏠 Built With
 - [React](https://reactjs.org/)
 - [Storybook](https://storybook.js.org/)
 - [Sass](https://sass-lang.com/)
 - [classnames](https://www.npmjs.com/package/classnames)
+- [styled-components](https://styled-components.com/)
 
 ## 📒 How To Use
 
